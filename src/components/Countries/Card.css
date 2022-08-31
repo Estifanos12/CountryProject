@@ -1,0 +1,7 @@
+.card{
+    box-shadow: 3px 4px 18px 1px rgba(202,184,184,0.75);
+    -webkit-box-shadow: 3px 4px 18px 1px rgba(202,184,184,0.75);
+    -moz-box-shadow: 3px 4px 18px 1px rgba(202,184,184,0.75);
+
+background-color: white;
+}
