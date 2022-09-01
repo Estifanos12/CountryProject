@@ -38,7 +38,7 @@ const Country = ({mode}) => {
   }, [name.cname]);
 
   return (
-    <div style={{backgroundColor: mode ? "black" : "white", color: mode ? "white" : "black"}}>
+    <div style={{backgroundColor: mode ? "black" : "white", color: mode ? "white" : "black"}} className="h-[100vh]">
       {countries.map((country, key) => {
 
         const {name,flags,nativeName,population,region,subregion,capital,tld,currencies,languages,borders} = country

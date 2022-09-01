@@ -1,5 +1,4 @@
 import { React, useState,useEffect } from 'react';
-import NavBar from './components/NavBar/NavBar';
 import Filter from './components/Filter';
 import SearchBar from './components/SearchBar';
 import Countries from './components/Countries/Countries';

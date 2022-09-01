@@ -1,7 +1,7 @@
 import React from 'react'
 import './Card.css'
 
-const CountriesCard = ({image,name,population,region,capital},{mode}) => {
+const CountriesCard = ({image,name,population,region,capital,mode}) => {
   return (
     <div style={{backgroundColor: mode ? "black" : "white", color: mode ? "white" : "black"}} className='card h-[350px] xl:h-[400px] rounded-lg pb-[2%] '>
         <div className="image rounded-lg mb-3 xl:mb-7 h-[50%] overflow-hidden">
