@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import './Card.css'
 
-const CountriesCard = ({image,name,population,region,capital,mode}) => {
-  return (
-    <div style={{backgroundColor: mode ? "black" : "white", color: mode ? "white" : "black"}} className='card h-[350px] xl:h-[400px] rounded-lg pb-[2%] '>
+const CountriesCard = ({image,name,population,region,capital}) => {
+    const mode = useSelector((state)=> state.toggle.mode)
+
+    return (
+    <div style={{backgroundColor: mode === "light" ? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)", color: mode === "light" ? "hsl(200, 15%, 8%)" : " hsl(0, 0%, 100%)"}} className='card h-[350px] xl:h-[400px] rounded-lg pb-[2%] '>
         <div className="image rounded-lg mb-3 xl:mb-7 h-[50%] overflow-hidden">
             <img src={image} alt="" width={"100%"}/>
         </div>

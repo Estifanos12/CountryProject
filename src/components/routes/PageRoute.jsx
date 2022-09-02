@@ -8,10 +8,10 @@ import Country from '../../pages/Country'
 const PageRoute = ({mode}) => {
   return (
     <Routes>
-        <Route path='/CountryProject' element={<Home mode={mode} />} />
+        <Route path='/CountryProject' element={<Home />} />
         <Route path='/search/:name' element={<SearchedCountries />} />
         <Route path='/category/:region' element={<FilteredCountries />} />
-        <Route path='/country/:cname' element={<Country mode={mode} />} />
+        <Route path='/country/:cname' element={<Country />} />
     </Routes>
   )
 }

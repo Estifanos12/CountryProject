@@ -3,21 +3,21 @@ import {React, useEffect} from 'react'
 import { Link, useParams } from "react-router-dom"
 import CountriesCard from '../components/Countries/CountriesCard'
 
-
 export const SearchedCountries = () => {
 
   const name = useParams()
   const [searchedCountries,setSearchedCountries] = useState([])
 
-  const fetchSearchedCountries = async ()=>{    
+
+  const fetchSearchedCountries = async ()=>{  
+      
       const data =  await fetch("https://restcountries.com/v3.1/name/" + name.name.toLowerCase())
       const response = await data.json()
       setSearchedCountries(response)
   }
 
   useEffect(()=>{
-    fetchSearchedCountries()
-    console.log(searchedCountries)
+      fetchSearchedCountries()
   },[name.name])
   
   const renderCountries = ()=>{

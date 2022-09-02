@@ -1,0 +1,28 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 2px -2px gray;
+    margin-bottom: 3%;
+    background-color: white;
+}
+
+.toggle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.4%;
+    width: 40%;
+}
+
+.title h1{
+    font-weight: 800;
+}
+
+.toggle p{
+    font-weight: 700;
+}
+
+.not-visible{
+    display: none;
+}

@@ -3,46 +3,29 @@ import Filter from './components/Filter';
 import SearchBar from './components/SearchBar';
 import Countries from './components/Countries/Countries';
 import PageRoute from './components/routes/PageRoute';
-import { FaRegMoon } from 'react-icons/fa';
-import {BsFillSunFill} from 'react-icons/bs'
+import Header from './components/Header/Header';
+import { useSelector } from 'react-redux';
 import './App.css'
 
 const App = () => {
 
-  const [darkMode,setDarkMode] = useState(false)
 
-  const handleDarkMode = ()=>{
-    setDarkMode(!darkMode)
-  }
-  
+  const mode = useSelector((state)=> state.toggle.mode)
+
+  useEffect(()=>{
+    console.log(mode)
+  },[mode])
 
   return (
-    <div style={{backgroundColor: darkMode ? "black" : "white", color: darkMode ? "white" : "black"}}>
-      <nav style={{backgroundColor: darkMode ? "black" : "white", color: darkMode ? "white" : "black"}} className="p-[2%] pl-[3%] ">
-        <div className="title text-sm xl:text-[25px] text-800">
-          <h1>Where in the world ?</h1>
-        </div>
 
-        <div className="toggle text-sm xl:text-[15px] ">
-          <div onClick={handleDarkMode}  className={ darkMode  ? "not-visible" : "flex cursor-pointer items-center justify-center gap-2"} >
-            <FaRegMoon />
-            <p>Dark Mode</p>
-          </div>
-
-          <div onClick={handleDarkMode} className={ !darkMode  ? "not-visible" : "flex cursor-pointer items-center justify-end gap-2 "}>
-            <BsFillSunFill />
-            <p>Light Mode</p>
-          </div>
-
-        </div>
-      </nav>
-
+    <div style={{backgroundColor: mode === "light" ? "hsl(0, 0%, 98%)" : "hsl(207, 26%, 17%)", color: mode === "light" ? "hsl(200, 15%, 8%)" : " hsl(0, 0%, 100%)"}} >
+      <Header />
       <div  className="search-filter relative flex-col mt-10 md:mt-0 gap-5 md:gap-0 md:flex-row flex justify-between ml-10 mr-10 ">
-        <SearchBar mode={darkMode} />
-        <Filter mode={darkMode} />
+        <SearchBar />
+        <Filter />
       </div>
       <div className="">
-        <PageRoute mode={darkMode} />
+        <PageRoute />
       </div>
     </div>
   );

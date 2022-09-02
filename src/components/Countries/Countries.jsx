@@ -3,16 +3,23 @@ import {React,useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import CountriesCard from './CountriesCard'
+import {useSelector,useDispatch} from "react-redux"
+import {switchBack}  from "../../utils/redux-toolkit/features/countriesSlice"
 
-const Countries = ({mode}) => {
+const Countries = () => {
 
     const [countries,setCountries] = useState([])
+
+    const back = useSelector(state=>state.switch.country)
+    const dispatch = useDispatch()
     
+    useEffect(()=>{
+        console.log("back")
+    },[])
     const fetchData = async ()=>{
             const checkLocalStorage = localStorage.getItem('countries')
 
             if(checkLocalStorage){
-                console.log(checkLocalStorage)
                 setCountries(JSON.parse(checkLocalStorage))
             }
             else{
@@ -26,7 +33,6 @@ const Countries = ({mode}) => {
 
      useEffect(()=>{
         fetchData()
-        console.log(countries)
      },[])
 
     return (
@@ -42,7 +48,7 @@ const Countries = ({mode}) => {
 
                     return(
                         <Link to={"/country/" + slug}>
-                            <CountriesCard mode={mode} image={country['flags']['png']} name={country['name']['official']} region={country['region']} capital={country['capital']} population={country['population']} />
+                            <CountriesCard image={country['flags']['png']} name={country['name']['official']} region={country['region']} capital={country['capital']} population={country['population']} />
                         </Link>
                     )
                 })

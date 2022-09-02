@@ -1,19 +1,22 @@
 import { React, useState, useEffect } from 'react';
 import CountriesCard from '../components/Countries/CountriesCard';
 import { useParams } from 'react-router-dom';
+import {useSelector} from "react-redux"
 
-const Country = ({mode}) => {
+const Country = () => {
   const [countries, setCountries] = useState([]);
   const [border, setBorder] = useState([]);
   const [native, setNative] = useState([]);
+  const mode = useSelector((state)=>state.toggle.mode)
   const name = useParams();
 
   const fetchCountries = async () => {
-    const data = await fetch(
+     const data = await fetch(
       'https://restcountries.com/v3.1/name/' + name.cname.toLowerCase().replace(" ","%20")
     );
     const response = await data.json();
     setCountries(response);
+    
   };
 
   const renderBorder = (e)=>{
@@ -38,7 +41,7 @@ const Country = ({mode}) => {
   }, [name.cname]);
 
   return (
-    <div style={{backgroundColor: mode ? "black" : "white", color: mode ? "white" : "black"}} className="h-[100vh]">
+    <div style={{backgroundColor: mode === "light" ? "hsl(0, 0%, 98%)" : "hsl(207, 26%, 17%)", color: mode === "light" ? "hsl(200, 15%, 8%)" : " hsl(0, 0%, 100%)"}} className="h-[100vh]">
       {countries.map((country, key) => {
 
         const {name,flags,nativeName,population,region,subregion,capital,tld,currencies,languages,borders} = country
