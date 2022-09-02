@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/CountryProject/static/css/main.b5e97fd4.css",
-    "main.js": "/CountryProject/static/js/main.a6385170.js",
+    "main.css": "/CountryProject/static/css/main.ef5d27b6.css",
+    "main.js": "/CountryProject/static/js/main.6b819b55.js",
     "index.html": "/CountryProject/index.html",
-    "main.b5e97fd4.css.map": "/CountryProject/static/css/main.b5e97fd4.css.map",
-    "main.a6385170.js.map": "/CountryProject/static/js/main.a6385170.js.map"
+    "main.ef5d27b6.css.map": "/CountryProject/static/css/main.ef5d27b6.css.map",
+    "main.6b819b55.js.map": "/CountryProject/static/js/main.6b819b55.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5e97fd4.css",
-    "static/js/main.a6385170.js"
+    "static/css/main.ef5d27b6.css",
+    "static/js/main.6b819b55.js"
   ]
 }
